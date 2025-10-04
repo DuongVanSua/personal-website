@@ -3,12 +3,8 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 100vh;
+    height: 10px;
     min-height: fit-content;
-    background-image: url("../../assets/Home/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .profile-parent{
@@ -25,7 +21,7 @@
 .profile-details-role{
     display: flex;
     flex-direction: column;
-    margin: 14px 0;
+    margin:  14px 0 14px 0;
 }
 
 .profile-details-role h1{
@@ -51,7 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;             
+    gap: 18px;         
     flex-wrap: wrap;
     margin-top: 12px;
 }
@@ -65,34 +61,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 0px 0px var(--white);
+    box-shadow: 0 1px 0px 0px var(--white) ;
     border-radius: 50%;
     height: 380px;
     width: 380px;
-    margin: 0 0 0 100px;
+    margin: 0 0px 0 100px;
 }
 
 .profile-picture-background{
     height: 92%;
     width: 92%;
-    background-image: url('../../assets/Home/4x6.jpg');
+    background-image: url('../../../assets/Home/4x6.jpg');
     background-size: cover;
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    transition: transform .3s ease;
 }
 
 .profile-picture-background:hover{
     transform: scale(1.07);
+    transition: 1s ease-out;
 }
 
 .colz .colz-icon i{
     color: white;
     padding: 8px;
     padding-left: 0px;
-    display: inline-block;
-    transition: transform .2s ease, color .2s ease;
 }
 
 .colz .colz-icon i:hover{
@@ -107,11 +101,11 @@
   }
 
   .profile-details-name{
-    font-size: 22px;
+    font-size: 22px;             
   }
 
   .profile-details-role h1{
-    font-size: 32px;
+    font-size: 32px;            
     line-height: 1.2;
   }
 
@@ -130,7 +124,7 @@
   .profile-picture{
     height: 300px;
     width: 300px;
-    margin: 0;
+    margin: 0;                
   }
 
   .profile-details-role h1{
@@ -165,7 +159,7 @@
   }
 
   .profile-details-role h1{
-    font-size: 24px;
+    font-size: 24px;              
     line-height: 1.2;
   }
 
@@ -174,9 +168,14 @@
   }
 
   .profile-options{
-    justify-content: center;
-    gap: 12px;  
+    display: flex;
+    justify-content: center;     
+    gap: 12px;
     flex-wrap: wrap;
+  }
+
+  .profile-options .highlighted-btn{
+    margin: 0 !important;
   }
 
   .profile-options .btn{
