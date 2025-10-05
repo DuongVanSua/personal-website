@@ -1,21 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
-  const fadeInScreenHandler = (screen) => {
-    if (!screen || screen.fadeInScreen !== props.id) return;
-    Animations.animations.fadeInScreen(props.id);
-  };
+  const fadeInScreenHandler = useCallback(
+    (screen) => {
+      if (!screen || screen.fadeInScreen !== props.id) return;
+      Animations.animations.fadeInScreen(props.id);
+    },
+    [props.id]
+  );
 
   useEffect(() => {
     const subscription = ScrollService.currentScreenFadeIn.subscribe(
       fadeInScreenHandler
     );
     return () => subscription.unsubscribe();
-  }, [props.id]);
+  }, [fadeInScreenHandler]);
 
   const SCREEN_CONSTANTS = {
     description: `I'm an Information Systems student passionate about building real software that solves real problems.
@@ -46,14 +49,12 @@ by building, breaking, and learning — one line of code at a time.`,
   return (
     <div className="about-me-container screen-container" id={props.id || ""}>
       <div className="about-me-parent">
-        <ScreenHeading title={"About Me"} subHeading={"Why Choose Me?"} />
+        <ScreenHeading title="About Me" subHeading="Why Choose Me?" />
 
         <div className="about-me-card">
           <div className="about-me-profile" />
           <div className="about-me-details">
-            <p className="about-me-description">
-              {SCREEN_CONSTANTS.description}
-            </p>
+            <p className="about-me-description">{SCREEN_CONSTANTS.description}</p>
 
             <div className="about-me-highlights">
               <div className="highlight-heading">
@@ -65,9 +66,7 @@ by building, breaking, and learning — one line of code at a time.`,
             <div className="about-me-options">
               <button className="btn primary-btn" type="button">Hire Me</button>
               <a href="/DuongVanSua_CV.pdf" download="DuongVanSua_CV.pdf">
-                <button className="btn highlighted-btn" type="button">
-                  Get Resume
-                </button>
+                <button className="btn highlighted-btn" type="button">Get Resume</button>
               </a>
             </div>
           </div>
