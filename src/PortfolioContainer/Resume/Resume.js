@@ -148,7 +148,7 @@ export default function Resume(props) {
           for managing products, reviews, users, and payments.
         </span>
         <br />
-        <span className="resume-description-text">• Hello</span>
+        <span className="resume-description-text">Thêm sau ....</span>
       </div>
     </div>,
 
