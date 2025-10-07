@@ -10,16 +10,14 @@ import Animations from "../../utilities/Animations";
 import './Testimonial.css'
 
 export default function Testimonial(props) {
-  // giữ nguyên handler, chỉ sửa key đúng tên
   const fadeInScreenHandler = useCallback(
     (screen) => {
-      if (!screen || screen.fadeInScreen !== props.id) return; // was fadeScreen
+      if (!screen || screen.fadeInScreen !== props.id) return;
       Animations.animations.fadeInScreen(props.id);
     },
     [props.id]
   );
 
-  // đăng ký/huỷ subscribe trong useEffect -> không còn biến unused
   useEffect(() => {
     const sub = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
     return () => sub.unsubscribe();
@@ -70,30 +68,6 @@ export default function Testimonial(props) {
                     <ul className="stars list-unstyled">
                       <li><i className="fa fa-star" /></li>
                       <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star-half-alt" /></li>
-                      <li><i className="fa fa-star" /></li>
-                    </ul>
-                  </div>
-                  <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="no internet connection" />
-                    <h5>Daisy Dominic</h5>
-                    <p>CEO InansGlobal</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-12">
-                <div className="testi-item">
-                  <div className="testi-comment">
-                    <p>
-                      <i className="fa fa-quote-left" />
-                      I patronized Ehizeex and when He delivered, I honestly
-                      fell in love with the project He is a very honest guy and
-                      he delivers ontime.
-                      <i className="fa fa-quote-right" />
-                    </p>
-                    <ul className="stars list-unstyled">
-                      <li><i className="fa fa-star" /></li>
                       <li><i className="fa fa-star" /></li>
                       <li><i className="fa fa-star-half-alt" /></li>
                       <li><i className="fa fa-star" /></li>
@@ -118,6 +92,33 @@ export default function Testimonial(props) {
                       <i className="fa fa-quote-right" />
                     </p>
                     <ul className="stars list-unstyled">
+                      <li><i className="fa fa-star" /></li>
+                      <li><i className="fa fa-star" /></li>
+                      <li><i className="fa fa-star" /></li>
+                      <li><i className="fa fa-star-half-alt" /></li>
+                      <li><i className="fa fa-star" /></li>
+                    </ul>
+                  </div>
+                  <div className="client-info">
+                    <img src="img/testimonial/lady.png" alt="no internet connection" />
+                    <h5>Daisy Dominic</h5>
+                    <p>CEO InansGlobal</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-12">
+                <div className="testi-item">
+                  <div className="testi-comment">
+                    <p>
+                      <i className="fa fa-quote-left" />
+                      I patronized Ehizeex and when He delivered, I honestly
+                      fell in love with the project He is a very honest guy and
+                      he delivers ontime.
+                      <i className="fa fa-quote-right" />
+                    </p>
+                    <ul className="stars list-unstyled">
+                      <li><i className="fa fa-star" /></li>
                       <li><i className="fa fa-star" /></li>
                       <li><i className="fa fa-star" /></li>
                       <li><i className="fa fa-star-half-alt" /></li>
@@ -135,6 +136,12 @@ export default function Testimonial(props) {
           </div>
         </div>
       </section>
+      <div className="footer-image">
+        <img
+          src={require("../../assets/Testimonial/shape-bg.png")}
+          alt="No internet connection"
+        />
+      </div>
     </div>
   );
 }
