@@ -12,7 +12,7 @@ export default class ScrollService {
   }
 
   scrollToHireMe = () => {
-    const contactMeScreen = document.getElementById("Contact Me");
+    const contactMeScreen = document.getElementById("ContactMe");
     if (!contactMeScreen) return;
     contactMeScreen.scrollIntoView({ behavior: "smooth", block: "start" });
   };

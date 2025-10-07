@@ -47,7 +47,7 @@ by building, breaking, and learning — one line of code at a time.`,
     ));
 
   return (
-    <div className="about-me-container screen-container" id={props.id || ""}>
+    <div className="about-me-container screen-container fade-in" id={props.id || ""}>
       <div className="about-me-parent">
         <ScreenHeading title="About Me" subHeading="Why Choose Me?" />
 
@@ -64,7 +64,7 @@ by building, breaking, and learning — one line of code at a time.`,
             </div>
 
             <div className="about-me-options">
-              <button className="btn primary-btn" type="button">Hire Me</button>
+              <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()} type="button">Hire Me</button>
               <a href="/DuongVanSua_CV.pdf" download="DuongVanSua_CV.pdf">
                 <button className="btn highlighted-btn" type="button">Get Resume</button>
               </a>
