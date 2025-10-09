@@ -61,7 +61,11 @@ export default function ContactMe(props) {
         <div className="col">
           <h2 className="title" style={{ fontWeight: 600 }}>
             <Typewriter
-              words={["Get In Touch Email"]}
+              words={[
+                "Get In Touch Email 📧",
+                "Let's Connect and Collaborate 🤝",
+                "Reach Out for Internship or Projects 💼",
+              ]}
               loop={0}
               cursor
               cursorStyle="|"
@@ -77,16 +81,6 @@ export default function ContactMe(props) {
             rel="noreferrer"
           >
             <i className="fa fa-facebook-square"></i>
-          </a>
-          <a href="mailto:yourmail@example.com">
-            <i className="fa fa-google-plus-square"></i>
-          </a>
-          <a
-            href="https://instagram.com/yourprofile"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fa fa-instagram"></i>
           </a>
           <a
             href="https://github.com/DuongVanSua"
@@ -135,6 +129,9 @@ export default function ContactMe(props) {
             </div>
           </form>
         </div>
+      </div>
+      <div className="footer-note">
+        <p>© {new Date().getFullYear()} by DVS-Dev</p>
       </div>
     </div>
   );

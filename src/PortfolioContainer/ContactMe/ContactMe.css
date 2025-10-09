@@ -133,6 +133,8 @@ button .load img{
 .col i{
     padding: 7px;
     color: white;
+    font-size: 28px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .col i:hover{
@@ -158,3 +160,18 @@ button .load img{
     flex: 0.9;
   }
 }
+
+.footer-note {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 0;
+  text-align: center;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;          
+  letter-spacing: 0.3px;
+  border-radius: 0;         
+  line-height: 1.6;
+}
+

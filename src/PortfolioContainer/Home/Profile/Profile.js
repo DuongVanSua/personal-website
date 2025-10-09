@@ -18,16 +18,6 @@ export default function Profile() {
               >
                 <i className="fa fa-facebook-square"></i>
               </a>
-              <a href="mailto:yourmail@example.com">
-                <i className="fa fa-google-plus-square"></i>
-              </a>
-              <a
-                href="https://instagram.com/yourprofile"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fa fa-instagram"></i>
-              </a>
               <a
                 href="https://github.com/DuongVanSua"
                 target="_blank"
