@@ -14,27 +14,25 @@ export default function AboutMe(props) {
   );
 
   useEffect(() => {
-    const subscription = ScrollService.currentScreenFadeIn.subscribe(
-      fadeInScreenHandler
-    );
+    const subscription =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
     return () => subscription.unsubscribe();
   }, [fadeInScreenHandler]);
 
   const SCREEN_CONSTANTS = {
-    description: `I'm an Information Systems student passionate about building real software that solves real problems.
-I'm seeking a Software Engineer Internship where I can contribute to impactful systems, learn from experienced engineers,
-and grow through hands-on coding, collaboration, and continuous improvement. My goal is to become a well-rounded developer
-by building, breaking, and learning — one line of code at a time.`,
+    description: `I'm an Information Systems student passionate about building real software that creates real value. 
+I aim to contribute to a professional environment where I can apply my technical knowledge, learn from experienced mentors, 
+and bring fresh energy, creativity, and responsibility to every project.`,
+
     highlights: {
-      bullets: [
-        "Programming Languages: Java, C++, PHP, JavaScript, TypeScript",
-        "Frameworks & Libraries: Laravel, Vue.js",
-        "Tools & Platforms: Docker, Git, Linux, Postman",
-        "Databases: MySQL",
-        "Concepts & Practices: Algorithms & Data Structures, OOP, RESTful API, MVC, Agile, CI/CD",
-        "Others: Distributed Systems (basic), API Design, Debugging & Refactoring",
-      ],
       heading: "Here are a Few Highlights:",
+      bullets: [
+        "I bring strong enthusiasm and a growth mindset — always eager to learn, adapt, and improve.",
+        "I take ownership of my work, ensuring code quality, reliability, and maintainability.",
+        "I contribute positively to team collaboration, communication, and shared success.",
+        "I focus on building user-centered applications that solve real problems effectively.",
+        "I’m ready to take on challenges, deliver value, and grow together with the company.",
+      ],
     },
   };
 
@@ -47,14 +45,19 @@ by building, breaking, and learning — one line of code at a time.`,
     ));
 
   return (
-    <div className="about-me-container screen-container fade-in" id={props.id || ""}>
+    <div
+      className="about-me-container screen-container fade-in"
+      id={props.id || ""}
+    >
       <div className="about-me-parent">
         <ScreenHeading title="About Me" subHeading="Why Choose Me?" />
 
         <div className="about-me-card">
           <div className="about-me-profile" />
           <div className="about-me-details">
-            <p className="about-me-description">{SCREEN_CONSTANTS.description}</p>
+            <p className="about-me-description">
+              {SCREEN_CONSTANTS.description}
+            </p>
 
             <div className="about-me-highlights">
               <div className="highlight-heading">
@@ -64,9 +67,17 @@ by building, breaking, and learning — one line of code at a time.`,
             </div>
 
             <div className="about-me-options">
-              <button className="btn primary-btn" onClick={() => ScrollService.scrollHandler.scrollToHireMe()} type="button">Hire Me</button>
+              <button
+                className="btn primary-btn"
+                onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+                type="button"
+              >
+                Hire Me
+              </button>
               <a href="/DuongVanSua_CV.pdf" download="DuongVanSua_CV.pdf">
-                <button className="btn highlighted-btn" type="button">Get Resume</button>
+                <button className="btn highlighted-btn" type="button">
+                  Get Resume
+                </button>
               </a>
             </div>
           </div>

@@ -71,8 +71,7 @@ export default function Profile() {
                 />
               </h1>
               <span className="profile-role-tagline">
-                Proficient in developing applications across frontend and
-                backend operations.
+                 Frontend, Backend, Mobile — delivering end-to-end, user-focused solutions.
               </span>
             </span>
           </div>

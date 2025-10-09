@@ -67,7 +67,7 @@ export default function Header() {
           </div>
 
           <div className="header-logo">
-            <span>UIT-DVS</span>
+            <span>DVS-Dev</span>
           </div>
 
           <div

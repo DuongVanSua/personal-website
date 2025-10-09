@@ -12,14 +12,16 @@ import "./Testimonial.css";
 export default function Testimonial(props) {
   const fadeInScreenHandler = useCallback(
     (screen) => {
-      if (!screen || screen.fadeInScreen !== (props.id || "Testimonial")) return;
+      if (!screen || screen.fadeInScreen !== (props.id || "Testimonial"))
+        return;
       Animations.animations.fadeInScreen(props.id || "Testimonial");
     },
     [props.id]
   );
 
   useEffect(() => {
-    const sub = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    const sub =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
     return () => sub.unsubscribe();
   }, [fadeInScreenHandler]);
 
@@ -43,35 +45,49 @@ export default function Testimonial(props) {
     <div>
       <ScreenHeading
         title={"Testimonial"}
-        subHeading={"What My Client Say About Me"}
+        subHeading={"What people say about me"}
       />
 
       <section className="testimonial-section fade-in" id="Testimonial">
         <div className="container">
           <div className="row">
-            <OwlCarousel className="owl-carousel" id="testimonial-carousel" {...options}>
+            <OwlCarousel
+              className="owl-carousel"
+              id="testimonial-carousel"
+              {...options}
+            >
               <div className="col-lg-12">
                 <div className="testi-item">
                   <div className="testi-comment">
                     <p>
                       <i className="fa fa-quote-left" />
-                      I patronized Ehizeex and when He delivered, I honestly
-                      fell in love with the project He is a very honest guy and
-                      he delivers ontime.
+                      Working with him was a great experience. He’s passionate,
+                      responsible, and always delivers high-quality work on
+                      time.
                       <i className="fa fa-quote-right" />
                     </p>
                     <ul className="stars list-unstyled">
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star-half-alt" /></li>
-                      <li><i className="fa fa-star" /></li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star-half-alt" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="client avatar" />
-                    <h5>Daisy Dominic</h5>
-                    <p>CEO InansGlobal</p>
+                    <img src="img/testimonial/vinh.png" alt="client avatar" />
+                    <h5>Vo Duc Vinh</h5>
+                    <p>Best Friend</p>
                   </div>
                 </div>
               </div>
@@ -81,23 +97,32 @@ export default function Testimonial(props) {
                   <div className="testi-comment">
                     <p>
                       <i className="fa fa-quote-left" />
-                      I patronized Ehizeex and when He delivered, I honestly
-                      fell in love with the project He is a very honest guy and
-                      he delivers ontime.
+                      He’s a great teammate who listens, collaborates well, and
+                      consistently turns challenges into results.
                       <i className="fa fa-quote-right" />
                     </p>
                     <ul className="stars list-unstyled">
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star-half-alt" /></li>
-                      <li><i className="fa fa-star" /></li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star-half-alt" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="client avatar" />
-                    <h5>Daisy Dominic</h5>
-                    <p>CEO InansGlobal</p>
+                    <img src="img/testimonial/vi.png" alt="client avatar" />
+                    <h5>Nguyen Chi Vi</h5>
+                    <p>Best Friend</p>
                   </div>
                 </div>
               </div>
@@ -107,23 +132,32 @@ export default function Testimonial(props) {
                   <div className="testi-comment">
                     <p>
                       <i className="fa fa-quote-left" />
-                      I patronized Ehizeex and when He delivered, I honestly
-                      fell in love with the project He is a very honest guy and
-                      he delivers ontime.
+                      He’s always eager to learn and never hesitates to take on
+                      new challenges — a true growth mindset person.
                       <i className="fa fa-quote-right" />
                     </p>
                     <ul className="stars list-unstyled">
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star" /></li>
-                      <li><i className="fa fa-star-half-alt" /></li>
-                      <li><i className="fa fa-star" /></li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star-half-alt" />
+                      </li>
+                      <li>
+                        <i className="fa fa-star" />
+                      </li>
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/lady.png" alt="client avatar" />
-                    <h5>Daisy Dominic</h5>
-                    <p>CEO InansGlobal</p>
+                    <img src="img/testimonial/tin.png" alt="client avatar" />
+                    <h5>Trinh Nguyen Bao Tin</h5>
+                    <p>Best Friend</p>
                   </div>
                 </div>
               </div>

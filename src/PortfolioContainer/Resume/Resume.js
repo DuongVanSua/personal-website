@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-import'./Resume.css'
+import "./Resume.css";
 
 export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
@@ -18,9 +18,8 @@ export default function Resume(props) {
   );
 
   useEffect(() => {
-    const subscription = ScrollService.currentScreenFadeIn.subscribe(
-      fadeInScreenHandler
-    );
+    const subscription =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
     return () => subscription.unsubscribe();
   }, [fadeInScreenHandler]);
 
@@ -62,93 +61,113 @@ export default function Resume(props) {
   ];
 
   const programmingSkillsDetails = [
-    { skill: "JavaScript", ratingPercentage: 85 },
-    { skill: "React JS", ratingPercentage: 85 },
-    { skill: "React Native", ratingPercentage: 85 },
-    { skill: "Express JS", ratingPercentage: 89 },
-    { skill: "Node JS", ratingPercentage: 89 },
-    { skill: "MongoDB", ratingPercentage: 70 },
-    { skill: "Core Java", ratingPercentage: 80 },
-    { skill: "HTML", ratingPercentage: 80 },
-    { skill: "CSS", ratingPercentage: 80 },
+    // --- Frontend ---
+    { skill: "HTML, CSS, JavaScript", ratingPercentage: 90 },
+    { skill: "React.js", ratingPercentage: 85 },
+    { skill: "Vue.js", ratingPercentage: 80 },
+
+    // --- Backend ---
+    { skill: "Node.js", ratingPercentage: 85 },
+    { skill: "Laravel (PHP)", ratingPercentage: 80 },
+    { skill: "Java & Spring Boot", ratingPercentage: 80 },
+    { skill: "MySQL", ratingPercentage: 75 },
+
+    // --- Mobile ---
+    { skill: "React Native", ratingPercentage: 80 },
+
+    // --- Tools & Others ---
+    { skill: "Git & GitHub", ratingPercentage: 85 },
+    { skill: "Docker", ratingPercentage: 70 },
   ];
 
   const projectDetails = [
     {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: "03/10/2025", toDate: "10/10/2025" },
+      title: "Web Developer – Luxon Viet Nam Co., Ltd (Remote)",
+      duration: { fromDate: "Dec 2024", toDate: "Oct 2025" },
       description:
-        "A personal portfolio website to showcase my details and projects in one place.",
-      subHeading: "Technologies Used: React JS, Bootstrap",
+        "Developed a real-world educational web platform in a 3-member team. Full-stack role handling both frontend and backend tasks. Focused on performance, scalability, and maintainability.",
+      subHeading:
+        "Technologies Used: Laravel / PHP / MySQL (backend), Vue.js / TypeScript (frontend), Docker, Agile methodology",
+    },
+    {
+      title: "Food Selling App – Course Project (2 Members)",
+      duration: { fromDate: "Apr 2025", toDate: "May 2025" },
+      description:
+        "A mobile fast-food ordering application with a user-friendly interface, allowing customers to browse, order, and pay for meals easily. Integrated AI Chat for smart customer support.",
+      subHeading:
+        "Technologies Used: Android (Java), Spring Boot, MySQL, Retrofit",
     },
     {
       title: "Personal Portfolio Website",
-      duration: { fromDate: "2020", toDate: "2021" },
+      duration: { fromDate: "Oct 03, 2025", toDate: "Oct 20, 2025" },
       description:
-        "A personal portfolio website to showcase my details and projects in one place.",
-      subHeading: "Technologies Used: React JS, Bootstrap",
-    },
-    {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: "2020", toDate: "2021" },
-      description:
-        "A personal portfolio website to showcase my details and projects in one place.",
-      subHeading: "Technologies Used: React JS, Bootstrap",
-    },
-    {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: "2020", toDate: "2021" },
-      description:
-        "A personal portfolio website to showcase my details and projects in one place.",
-      subHeading: "Technologies Used: React JS, Bootstrap",
+        "A personal portfolio website to showcase projects, skills, and experiences with a responsive UI and modern animations.",
+      subHeading: "Technologies Used: React.js, Node.js, Bootstrap",
     },
   ];
 
-  
   const resumeDetails = [
     // Education
     <div className="resume-screen-container" key="education">
       <ResumeHeading
-        heading={"University of Information Technology"}
-        subHeading={"Information Systems"}
+        heading={"University"}
+        subHeading={
+          "University of Information Technology – Vietnam National University, Ho Chi Minh City"
+        }
         fromDate={"2022"}
         toDate={"2026"}
       />
       <ResumeHeading
-        heading={"University of Information Technology"}
-        subHeading={"Information Systems"}
-        fromDate={"2022"}
-        toDate={"2026"}
+        heading={"High School"}
+        subHeading={"N’Trang Lơng Ethnic Boarding High School"}
+        fromDate={"2019"}
+        toDate={"2022"}
       />
       <ResumeHeading
-        heading={"University of Information Technology"}
-        subHeading={"Information Systems"}
-        fromDate={"2022"}
-        toDate={"2026"}
+        heading={"Secondary School"}
+        subHeading={"Quang Hoa Secondary School"}
+        fromDate={"2015"}
+        toDate={"2019"}
       />
     </div>,
 
     // Work History
     <div className="resume-screen-container" key="work-experience">
       <ResumeHeading
-        heading={"VNG Technology"}
-        subHeading={"Full Stack Developer Intern"}
-        fromDate={"2030"}
+        heading={"Personal & Academic Projects"}
+        subHeading={"Frontend - Backend - Mobile Development"}
+        fromDate={"2022"}
         toDate={"Present"}
       />
       <div className="experience-description">
         <span className="resume-description-text">
-          Currently working as a MERN stack web and mobile developer and also an
-          online instructor.
+          • Gained hands-on experience by building multiple web and mobile
+          applications across frontend, backend, and full-stack environments.
         </span>
       </div>
       <div className="experience-description">
         <span className="resume-description-text">
-          • Developed an ecommerce website for a client with an admin dashboard
-          for managing products, reviews, users, and payments.
+          • Designed and developed responsive web interfaces using React and
+          Vue.js, focusing on clean UI/UX and component-based architecture.
         </span>
-        <br />
-        <span className="resume-description-text">Thêm sau ....</span>
+      </div>
+      <div className="experience-description">
+        <span className="resume-description-text">
+          • Implemented backend APIs and authentication systems with Node.js and
+          Express, ensuring performance, scalability, and secure data flow.
+        </span>
+      </div>
+      <div className="experience-description">
+        <span className="resume-description-text">
+          • Built mobile applications using React Native with seamless
+          integration to backend APIs for real-time data synchronization.
+        </span>
+      </div>
+      <div className="experience-description">
+        <span className="resume-description-text">
+          • Deployed full-stack projects and personal portfolio websites
+          showcasing practical experience and continuous learning.
+        </span>
       </div>
     </div>,
 
@@ -188,16 +207,16 @@ export default function Resume(props) {
     // Interests
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
-        heading="Teaching"
-        description="I love sharing knowledge and helping others learn."
+        heading="Sports"
+        description="I enjoy playing football, volleyball, and badminton — staying active helps me stay focused and balanced."
       />
       <ResumeHeading
-        heading="Music"
-        description="Listening to soothing music is my favorite stress reliever."
+        heading="Social Activities"
+        description="I actively participate in community programs such as voluntary blood donation, having donated five times so far."
       />
       <ResumeHeading
-        heading="Competitive Gaming"
-        description="I enjoy football games and challenging my reflexes."
+        heading="Reading"
+        description="I love reading books about technology, self-development, and ethics to broaden my perspective and mindset."
       />
     </div>,
   ];
@@ -217,7 +236,9 @@ export default function Resume(props) {
     return resumeBullets.map((bullet, index) => (
       <div
         onClick={() => handleCarousal(index)}
-        className={index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
         key={index}
       >
         <img
@@ -242,7 +263,10 @@ export default function Resume(props) {
   };
 
   return (
-    <div className="resume-container screen-container fade-in" id={props.id || ""}>
+    <div
+      className="resume-container screen-container fade-in"
+      id={props.id || ""}
+    >
       <div className="resume-content">
         <ScreenHeading title={"Resume"} subHeading={"My Formal Bio Details"} />
         <div className="resume-card">
