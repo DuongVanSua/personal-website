@@ -28,29 +28,59 @@ export default function ContactMe(props) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [banner, setBanner] = useState("");
-  const [bool, setBool] = useState(false);
+  const [bool, setBool] = useState(false); // spinner
 
   const handleName = (e) => setName(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
   const handleMessage = (e) => setMessage(e.target.value);
 
+  // đơn giản, đủ dùng
+  const isValidEmail = (v) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v).toLowerCase());
+
   const submitForm = async (e) => {
     e.preventDefault();
+
+    // 1) Kiểm tra trước, KHÔNG bật spinner, KHÔNG gọi API
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      const msg = "please fill all the fields";
+      setBanner(msg);
+      toast.error(msg);
+      return;
+    }
+    if (!isValidEmail(email)) {
+      const msg = "please provide a valid email";
+      setBanner(msg);
+      toast.error(msg);
+      return;
+    }
+
+    // 2) Đã hợp lệ → bật spinner, gọi API
+    setBool(true);
     try {
-      const data = { name, email, message };
-      setBool(true);
-      const res = await axios.post(`/contact`, data);
-      if (name.length === 0 || email.length === 0 || message.length === 0) {
-        setBanner(res.data.msg);
-        toast.error(res.data.msg);
-        setBool(false);
-      } else if (res.status === 200) {
-        setBanner(res.data.msg);
-        toast.success(res.data.msg);
-        setBool(false);
+      const res = await axios.post(`/contact`, { name, email, message });
+
+      if (res.status === 200) {
+        setBanner(res.data?.msg || "Sent successfully");
+        toast.success(res.data?.msg || "Sent successfully");
+
+        // reset form
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setBanner(res.data?.msg || "Something went wrong");
+        toast.error(res.data?.msg || "Something went wrong");
       }
     } catch (error) {
-      console.log(error);
+      const msg =
+        error?.response?.data?.msg ||
+        error?.message ||
+        "Server error. Please try again.";
+      setBanner(msg);
+      toast.error(msg);
+    } finally {
+      setBool(false); // 3) Tắt spinner
     }
   };
 
@@ -106,30 +136,47 @@ export default function ContactMe(props) {
 
           <form onSubmit={submitForm}>
             <p>{banner}</p>
+
             <label htmlFor="name">Name</label>
-            <input type="text" onChange={handleName} value={name} />
+            <input
+              id="name"
+              type="text"
+              onChange={handleName}
+              value={name}
+              disabled={bool}
+            />
 
             <label htmlFor="email">Email</label>
-            <input type="email" onChange={handleEmail} value={email} />
+            <input
+              id="email"
+              type="email"
+              onChange={handleEmail}
+              value={email}
+              disabled={bool}
+            />
 
             <label htmlFor="message">Message</label>
-            <textarea onChange={handleMessage} value={message} />
+            <textarea
+              id="message"
+              onChange={handleMessage}
+              value={message}
+              disabled={bool}
+            />
 
             <div className="send-btn">
-              <button type="submit">
+              <button type="submit" disabled={bool}>
                 send <i className="fa fa-paper-plane" />
                 {bool ? (
                   <b className="load">
                     <img src={load1} alt="loading animation" />
                   </b>
-                ) : (
-                  ""
-                )}
+                ) : null}
               </button>
             </div>
           </form>
         </div>
       </div>
+
       <div className="footer-note">
         <p>© {new Date().getFullYear()} by DVS-Dev</p>
       </div>
