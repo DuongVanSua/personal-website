@@ -61,12 +61,10 @@ You can host the build on **Netlify**, **Vercel**, or serve it via your Node.js 
 ![About Screenshot](./src/images/demo-about.png)
 
 ### Resume
-![Resume Screenshot](../src/images/demo-resume.png)
-
+![Resume Screenshot](./src/images/demo-resume.png)
 
 ### Testimonial
 ![Testimonial Screenshot](./src/images/demo-testimonial.png)
-
 
 ### Contact
 ![Contact Screenshot](./src/images/demo-contact.png)
