@@ -65,7 +65,7 @@ You can host the build on **Netlify**, **Vercel**, or serve it via your Node.js 
 
 
 ### Testimonial
-![Testimonial Screenshot](./src/images/demo-contact.png)
+![Testimonial Screenshot](./src/images/demo-testimonial.png)
 
 
 ### Contact
