@@ -11,11 +11,12 @@
   display: flex;
   height: 360px;
   width: 1000px;
+  /* margin: 80px 0; */
 }
 
 .resume-bullets {
-  height: 100%;
   box-shadow: 15px 0 9px -15px #1f2235;
+  height: 100%;
   width: 320px;
 }
 
@@ -23,13 +24,16 @@
   flex-grow: 1;
   width: 600px;
   overflow: hidden;
-  padding: 0 0 0 70px;
+  padding: 0 0 0 80px;
 }
 
 .experience-description {
   margin: 10px 0 0 0;
   text-align: justify;
-  max-width: 100%;
+}
+
+.resume-description-text {
+  font-size: 12px;
 }
 
 .resume-details-carousal {
@@ -45,7 +49,7 @@
 }
 
 .bullets {
-  width: 80%;
+  width: 86%;
   position: relative;
   z-index: 2;
 }
@@ -53,6 +57,7 @@
 .bullet {
   display: flex;
   align-items: center;
+  cursor: pointer;
   background-color: #1f2235;
   height: 40px;
   margin: 15px 0;
@@ -60,7 +65,6 @@
   border-radius: 20px;
   width: 30px;
   transition: width 0.6s ease;
-  cursor: pointer;
 }
 
 .bullet-label {
@@ -83,7 +87,7 @@
 }
 
 .selected-bullet {
-  color: white;
+  color: var(--white);
   width: 100%;
 }
 
@@ -106,20 +110,30 @@
   justify-content: space-between;
 }
 
+.resume-main-heading span {
+  color: var(--dark-orange);
+  font-size: 16px;
+  font-family: "Poppins SemiBold";
+}
+
+.experience-description {
+  max-width: 100%;
+}
+
 .heading-bullet {
   position: absolute;
   left: -30px;
   height: 15px;
   width: 15px;
   top: 5px;
-  background-color: var(--dark-orange);
   border-radius: 50%;
+  background-color: #ff5823;
 }
 
 .resume-sub-heading {
   font-size: 14px;
   font-family: "Poppins SemiBold";
-  color: #111;
+  color: var(--black);
   margin: 10px 0 0 0;
 }
 
@@ -129,11 +143,11 @@
 }
 
 .heading-date {
-  background-color: var(--dark-orange);
+  background-color: #ff5823;
   padding: 4px 12px;
   font-size: 14px;
   border-radius: 14px;
-  color: white;
+  color: var(--white);
 }
 
 .skill-parent {
@@ -155,7 +169,7 @@
   position: relative;
   height: 15px;
   width: 70%;
-  background-color: var(--dark-orange);
+  background-color: #ff5823;
 }
 
 .skill-percentage .active-percentage-bar {
@@ -166,11 +180,12 @@
 }
 
 .skill-parent span {
-  font-family: "Poppins SemiBold";
+  font-family: "Poppins Bold";
   font-size: 16px;
-  color: var(--dark-orange);
+  color: #ff5823;
 }
 
+/* IPAD PRO RESPONSIVENESS */
 @media only screen and (max-width: 1110px) {
   .resume-card {
     width: 880px;
@@ -181,6 +196,7 @@
   }
 }
 
+/* IPAD RESPONSIVENESS */
 @media only screen and (max-width: 1023px) {
   .resume-content {
     display: flex;
@@ -198,17 +214,18 @@
     flex-direction: column;
     margin: 30px 0;
     align-items: center;
+    width: 90%;
   }
 
   .resume-bullet-details {
     height: 360px;
-    width: fit-content;
     padding: 0;
+    width: fit-content;
   }
 
   .resume-bullets {
-    width: 100%;
     margin: 30px 0;
+    width: 100%;
   }
 
   .selected-bullet {

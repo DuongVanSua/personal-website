@@ -82,14 +82,6 @@ export default function Resume(props) {
 
   const projectDetails = [
     {
-      title: "Web Developer – Luxon Viet Nam Co., Ltd (Remote)",
-      duration: { fromDate: "Dec 2024", toDate: "Oct 2025" },
-      description:
-        "Developed a real-world educational web platform in a 3-member team. Full-stack role handling both frontend and backend tasks. Focused on performance, scalability, and maintainability.",
-      subHeading:
-        "Technologies Used: Laravel / PHP / MySQL (backend), Vue.js / TypeScript (frontend), Docker, Agile methodology",
-    },
-    {
       title: "Food Selling App – Course Project (2 Members)",
       duration: { fromDate: "Apr 2025", toDate: "May 2025" },
       description:
@@ -155,18 +147,6 @@ export default function Resume(props) {
         <span className="resume-description-text">
           • Implemented backend APIs and authentication systems with Node.js and
           Express, ensuring performance, scalability, and secure data flow.
-        </span>
-      </div>
-      <div className="experience-description">
-        <span className="resume-description-text">
-          • Built mobile applications using React Native with seamless
-          integration to backend APIs for real-time data synchronization.
-        </span>
-      </div>
-      <div className="experience-description">
-        <span className="resume-description-text">
-          • Deployed full-stack projects and personal portfolio websites
-          showcasing practical experience and continuous learning.
         </span>
       </div>
     </div>,

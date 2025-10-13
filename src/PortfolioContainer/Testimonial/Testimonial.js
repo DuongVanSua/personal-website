@@ -9,6 +9,11 @@ import Animations from "../../utilities/Animations";
 
 import "./Testimonial.css";
 
+import vinh from "../../img/Testimonial/vinh.png";
+import vi from "../../img/Testimonial/vi.png";
+import tin from "../../img/Testimonial/tin.png"
+import shape from "../../img/Testimonial/shape-bg.png"
+
 export default function Testimonial(props) {
   const fadeInScreenHandler = useCallback(
     (screen) => {
@@ -85,7 +90,7 @@ export default function Testimonial(props) {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/vinh.png" alt="client avatar" />
+                    <img src={vinh} alt="client avatar" />
                     <h5>Vo Duc Vinh</h5>
                     <p>Best Friend</p>
                   </div>
@@ -120,7 +125,7 @@ export default function Testimonial(props) {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/vi.png" alt="client avatar" />
+                    <img src={vi} alt="client avatar" />
                     <h5>Nguyen Chi Vi</h5>
                     <p>Best Friend</p>
                   </div>
@@ -155,7 +160,7 @@ export default function Testimonial(props) {
                     </ul>
                   </div>
                   <div className="client-info">
-                    <img src="img/testimonial/tin.png" alt="client avatar" />
+                    <img src={tin} alt="client avatar" />
                     <h5>Trinh Nguyen Bao Tin</h5>
                     <p>Best Friend</p>
                   </div>
@@ -168,7 +173,7 @@ export default function Testimonial(props) {
 
       <div className="footer-image">
         <img
-          src={require("../../assets/Testimonial/shape-bg.png")}
+          src={shape}
           alt="decorative wave"
         />
       </div>
